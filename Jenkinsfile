@@ -7,7 +7,7 @@ node{
         sh "{mvnHome}/bin/mvn package"
     }
     stage('Deploy to Tomcat'){
-        sh target/*.war /opt/tomcat9/webapps
+        sh 'target/*.war /opt/tomcat9/webapps'
     }
     stage('Email Notification'){
       mail bcc:'', body:'''Hi Welcome to Jenkins Pipeline alerts
