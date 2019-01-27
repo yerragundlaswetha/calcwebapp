@@ -7,6 +7,7 @@ node{
         sh "${mvnHome}/bin/mvn package"
     }
     stage('Deploy to Tomcat'){
+        sudo su -s /bin/bash jenkins
         sh 'target/*.war /opt/tomcat9/webapps'
     }
     stage('Email Notification'){
