@@ -6,12 +6,8 @@ node{
         def mvnHome = tool name: 'MAVEN', type: 'maven'
         sh "${mvnHome}/bin/mvn package"
     }
-    stage('Deploy to Tomcat'){
-        steps {
-         bash '''#!/bin/bash
-                 cp target/*.war /usr/local/tomcat9/webapps 
-         '''
-        }
+    stage('Deploy to Tomcat'){ 
+        sh 'cp target/*.war /usr/local/tomcat9/webapps'
     }
     stage('Email Notification'){
       mail bcc:'', body:'''Hi Welcome to Jenkins Pipeline alerts
