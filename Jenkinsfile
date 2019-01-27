@@ -7,7 +7,10 @@ node{
         sh "${mvnHome}/bin/mvn package"
     }
     stage('Deploy to Tomcat'){
-        cp 'target/*.war /opt/tomcat9/webapps'
+        bash '''
+            #!/bin/bash
+            cp 'target/*.war /opt/tomcat9/webapps'
+         '''
     }
     stage('Email Notification'){
       mail bcc:'', body:'''Hi Welcome to Jenkins Pipeline alerts
