@@ -10,7 +10,7 @@ node{
         sh 'cp target/*.war /opt/tomcat9/webapps'
     }
     stage('Email Notification'){
-      mailx bcc:'', body:'''Hi Welcome to Jenkins Pipeline alerts
+      sh 'mail -s bcc:'', body:'''Hi Welcome to Jenkins Pipeline alerts
       Thanks
       M.Muniraja''', cc:'', from:'', replyTo:'', subject:'Jenkins Job Status', to:'mmuni1990@gmail.com'
     }
