@@ -68,7 +68,7 @@
  <distributionManagement>
     <snapshotRepository>
       <id>nexus123</id>
-      <url>http://ec2-3-17-134-201.us-east-2.compute.amazonaws.com:8081/repository/nexus123/</url>
+      <url>http://ec2-3-16-156-192.us-east-2.compute.amazonaws.com:8081/repository/nexus123/</url>
     </snapshotRepository>
  </distributionManagement>
 
